@@ -1,0 +1,142 @@
+﻿<Window x:Class="CPSC481P3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CPSC481P3"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="720" Width="1280">
+    <Window.Resources>
+        <Style x:Key="ButtonStyle1" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+                            <Ellipse Fill="#FFC4C4C4"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsFocused" Value="True"/>
+                            <Trigger Property="IsDefaulted" Value="True"/>
+                            <Trigger Property="IsMouseOver" Value="True"/>
+                            <Trigger Property="IsPressed" Value="True"/>
+                            <Trigger Property="IsEnabled" Value="False"/>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="ButtonStyle2" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+                            <Rectangle Fill="#FFBFBFBF" RadiusY="5" RadiusX="5"/>
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Content="Appetizers"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsFocused" Value="True"/>
+                            <Trigger Property="IsDefaulted" Value="True"/>
+                            <Trigger Property="IsMouseOver" Value="True"/>
+                            <Trigger Property="IsPressed" Value="True"/>
+                            <Trigger Property="IsEnabled" Value="False"/>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="ButtonStyle3" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+                            <Ellipse Fill="#FF6C6C6C"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsFocused" Value="True"/>
+                            <Trigger Property="IsDefaulted" Value="True"/>
+                            <Trigger Property="IsMouseOver" Value="True"/>
+                            <Trigger Property="IsPressed" Value="True"/>
+                            <Trigger Property="IsEnabled" Value="False"/>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="ButtonStyle4" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+                            <Rectangle Fill="#FF868686" RadiusY="20" RadiusX="20"/>
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Content="ORDER"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsFocused" Value="True"/>
+                            <Trigger Property="IsDefaulted" Value="True"/>
+                            <Trigger Property="IsMouseOver" Value="True"/>
+                            <Trigger Property="IsPressed" Value="True"/>
+                            <Trigger Property="IsEnabled" Value="False"/>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Canvas Name="ContentPanel">
+        <Canvas Name="WelcomeScreen" d:IsHidden="True">
+            <Image x:Name="WelcomeImage" Height="877.195" Canvas.Left="-470.509" Canvas.Top="-126.435" Width="2206.051" Source="burger.jpg" d:IsHidden="True"/>
+            <TextBlock x:Name="WelcomeText" Height="117.152" Canvas.Left="477.019" TextWrapping="Wrap" Text="Welcome!" Canvas.Top="116.931" Width="394.18" FontSize="72" FontFamily="Segoe UI Black" Foreground="White" d:IsHidden="True"/>
+            <TextBlock Height="33.078" Canvas.Left="549.958" TextWrapping="Wrap" Text="Tap anywhere to proceed." Canvas.Top="245.378" Width="215.007" Foreground="White" FontSize="18"/>
+
+        </Canvas>
+        <Canvas x:Name="SelectionScreenDrinks" d:IsHidden="True">
+            <Rectangle x:Name="DrinksBackground" Fill="#FFC5C5C5" Height="645.334" RadiusY="5" RadiusX="5" Canvas.Top="46.5" Width="1273.333" d:IsHidden="True"/>
+            <Canvas x:Name="ContentSoda" d:IsHidden="True" Margin="0,0,1000,631.834"/>
+
+            <Canvas x:Name="ContentShakes" d:IsHidden="True" Margin="0,0,1000,631.834"/>
+
+            <Canvas x:Name="ContentCoffeeAndTea" d:IsHidden="True" Margin="0,0,1000,631.834"/>
+            <Button x:Name="SodaTab" Content="Soda" Height="40" Canvas.Left="7.667" Canvas.Top="8" Width="255" BorderBrush="{x:Null}" Background="#FFC5C5C5" FontSize="16"/>
+            <Button x:Name="ShakesTab" Content="Shakes" Height="40" Canvas.Left="270.167" Canvas.Top="8" Width="255" BorderBrush="{x:Null}" Background="#FFC5C5C5" FontSize="16"/>
+            <Button x:Name="CoffeTab" Content="Coffee and Tea" Height="40" Canvas.Left="530.167" Canvas.Top="8" Width="255" BorderBrush="{x:Null}" Background="#FFC5C5C5" FontSize="16"/>
+            <ScrollViewer x:Name="DrinksScroller" Height="631.834" Width="1017.333" Canvas.Top="60" Canvas.Left="15" Background="#FFEDEDED">
+                <Grid x:Name="DrinksGrid"/>
+            </ScrollViewer>
+        </Canvas>
+        <Canvas x:Name="SelectionScreenFood" d:IsHidden="True">
+            <Button x:Name="MainDishesTab" Content="Main Dishes" Height="40" Canvas.Left="7.667" Canvas.Top="8" Width="255" BorderBrush="{x:Null}" Background="#FFC5C5C5" FontSize="16"/>
+            <Button x:Name="AppetizersTab" Content="Appetizers" Height="40" Canvas.Left="270.167" Canvas.Top="8" Width="255" BorderBrush="{x:Null}" Background="#FFC5C5C5" FontSize="16"/>
+            <Button x:Name="DessertsTab" Content="Desserts" Height="40" Canvas.Left="530.167" Canvas.Top="8" Width="255" BorderBrush="{x:Null}" Background="#FFC5C5C5" FontSize="16"/>
+            <Rectangle x:Name="FoodBackground" Fill="#FFC5C5C5" Height="645.334" RadiusY="5" RadiusX="5" Canvas.Top="46.5" Width="1273.333"/>
+            <ScrollViewer Name="FoodScroller" Height="631.834" Width="1017.333" Canvas.Top="60" Canvas.Left="15" Background="#FFEDEDED"/>
+        </Canvas>
+        <Canvas x:Name="OrderScreen" d:IsHidden="True">
+            <Rectangle x:Name="OrderBackground" Fill="#FFD4D4D4" Height="690.667" Canvas.Left="744.667" Width="550" RadiusX="20" RadiusY="20"/>
+            <Rectangle x:Name="TotalBackground" Fill="#FFECECEC" Height="108" Canvas.Left="744" Canvas.Top="487" Width="529.333" RadiusY="16"/>
+            <ScrollViewer Name="OrderScroller" Height="451.499" Width="528.667" Canvas.Left="744.667" Canvas.Top="33.001" Background="#FFECECEC">
+
+            </ScrollViewer>
+            <Button x:Name="OrderButton" Content="Button" Height="64.667" Canvas.Left="874.667" Style="{DynamicResource ButtonStyle4}" Canvas.Top="612" Width="285.333" FontSize="22"/>
+            <TextBlock x:Name="TotalLabel" Height="49.333" Canvas.Left="878.667" TextWrapping="Wrap" Text="TOTAL" Canvas.Top="524.667" Width="131.333" FontSize="22"/>
+            <TextBlock x:Name="OrderQuantityLabel" Height="38.666" Canvas.Left="778.667" TextWrapping="Wrap" Text="Quantity" Canvas.Top="44.667" Width="112.666" FontSize="18"/>
+            <TextBlock x:Name="OrderItemNameLabel" Height="38.666" Canvas.Left="958.667" TextWrapping="Wrap" Text="Item Name" Canvas.Top="44.667" Width="112.666" FontSize="18"/>
+            <TextBlock x:Name="OrderPriceLabel" Height="38.666" Canvas.Left="1138.667" TextWrapping="Wrap" Text="Price" Canvas.Top="44.667" Width="112.666" FontSize="18"/>
+        </Canvas>
+        <Canvas x:Name="ControlPanel" d:IsHidden="True">
+            <Button x:Name="CartButton" Content="CART" Height="156" Canvas.Left="1039.333" Canvas.Top="528.917" Width="230" FontSize="18" BorderBrush="{x:Null}"/>
+            <Button x:Name="CallServerButton" Content="CALL SERVER" Height="151.111" Canvas.Left="1039.333" Canvas.Top="372.806" Width="230" FontSize="18" BorderBrush="{x:Null}"/>
+            <Button x:Name="FoodButton" Content="FOOD" Height="155.556" Canvas.Left="1039.333" Canvas.Top="212.25" Width="230" FontSize="18" BorderBrush="{x:Null}"/>
+            <Button x:Name="DrinksButton" Content="DRINKS" Height="157.333" Canvas.Left="1039.333" Canvas.Top="49.917" Width="230" FontSize="18" BorderBrush="{x:Null}"/>
+        </Canvas>
+        <Canvas x:Name="ItemDetailedView">
+            <Rectangle x:Name="DetailedViewBackground" Fill="#FFD1D1D1" Height="432" Canvas.Left="108.667" RadiusY="20" RadiusX="20" Canvas.Top="125" Width="924"/>
+            <Image Height="238" Canvas.Left="106.667" Canvas.Top="154" Width="918"/>
+            <ScrollViewer Name="DetailedViewScroller" Height="375" Width="924" Canvas.Left="108.667" Canvas.Top="154">
+                <TextBlock Height="66" TextWrapping="Wrap" Text="ItemName" Width="430" FontSize="48"/>
+
+            </ScrollViewer>
+        </Canvas>
+
+    </Canvas>
+
+</Window>

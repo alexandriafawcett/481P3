@@ -1,0 +1,15 @@
+C:\Users\ckbul\source\repos\CPSC481P3\CPSC481P3\bin\Debug\CPSC481P3.exe.config
+C:\Users\ckbul\source\repos\CPSC481P3\CPSC481P3\bin\Debug\CPSC481P3.exe
+C:\Users\ckbul\source\repos\CPSC481P3\CPSC481P3\bin\Debug\CPSC481P3.pdb
+C:\Users\ckbul\source\repos\CPSC481P3\CPSC481P3\obj\Debug\CPSC481P3.csprojResolveAssemblyReference.cache
+C:\Users\ckbul\source\repos\CPSC481P3\CPSC481P3\obj\Debug\MainWindow.g.cs
+C:\Users\ckbul\source\repos\CPSC481P3\CPSC481P3\obj\Debug\App.g.cs
+C:\Users\ckbul\source\repos\CPSC481P3\CPSC481P3\obj\Debug\CPSC481P3_MarkupCompile.cache
+C:\Users\ckbul\source\repos\CPSC481P3\CPSC481P3\obj\Debug\CPSC481P3_MarkupCompile.lref
+C:\Users\ckbul\source\repos\CPSC481P3\CPSC481P3\obj\Debug\MainWindow.baml
+C:\Users\ckbul\source\repos\CPSC481P3\CPSC481P3\obj\Debug\CPSC481P3.g.resources
+C:\Users\ckbul\source\repos\CPSC481P3\CPSC481P3\obj\Debug\CPSC481P3.Properties.Resources.resources
+C:\Users\ckbul\source\repos\CPSC481P3\CPSC481P3\obj\Debug\CPSC481P3.csproj.GenerateResource.cache
+C:\Users\ckbul\source\repos\CPSC481P3\CPSC481P3\obj\Debug\CPSC481P3.csproj.CoreCompileInputs.cache
+C:\Users\ckbul\source\repos\CPSC481P3\CPSC481P3\obj\Debug\CPSC481P3.exe
+C:\Users\ckbul\source\repos\CPSC481P3\CPSC481P3\obj\Debug\CPSC481P3.pdb
