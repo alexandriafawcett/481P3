@@ -81,26 +81,123 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <Style x:Key="ButtonStyle5" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+                            <Ellipse Fill="#FF515151"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsFocused" Value="True"/>
+                            <Trigger Property="IsDefaulted" Value="True"/>
+                            <Trigger Property="IsMouseOver" Value="True"/>
+                            <Trigger Property="IsPressed" Value="True"/>
+                            <Trigger Property="IsEnabled" Value="False"/>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Storyboard x:Key="OpenOrder"/>
+        <Storyboard x:Key="CloseOrder"/>
+        <Storyboard x:Key="DismissWelcome"/>
+        <Storyboard x:Key="OpenFoodView"/>
+        <Storyboard x:Key="OpenDrinksView"/>
+        <Storyboard x:Key="DisplaySodas"/>
+        <Storyboard x:Key="DisplayShakes"/>
+        <Storyboard x:Key="DisplayCof"/>
+        <Storyboard x:Key="DisplayMainDishes"/>
+        <Storyboard x:Key="DisplayAppetizers"/>
+        <Storyboard x:Key="DisplayDesserts"/>
+        <Storyboard x:Key="CloseDetailedView"/>
+        <Storyboard x:Key="Acknowledge1"/>
+        <Storyboard x:Key="CallServer"/>
+        <Storyboard x:Key="AcknowledgeOrder"/>
+        <Storyboard x:Key="ConfirmOrder"/>
+        <Storyboard x:Key="BillOnWay"/>
+        <Storyboard x:Key="GoToThankYou"/>
+        <Storyboard x:Key="GoReviewScreen"/>
     </Window.Resources>
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="CartButton">
+            <BeginStoryboard x:Name="OpenOrder_BeginStoryboard" Storyboard="{StaticResource OpenOrder}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="OrderExitButton">
+            <BeginStoryboard x:Name="CloseOrder_BeginStoryboard" Storyboard="{StaticResource CloseOrder}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="DismissWelcome">
+            <BeginStoryboard x:Name="DismissWelcome_BeginStoryboard" Storyboard="{StaticResource DismissWelcome}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="FoodButton">
+            <BeginStoryboard x:Name="OpenFoodView_BeginStoryboard" Storyboard="{StaticResource OpenFoodView}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="DrinksButton">
+            <BeginStoryboard x:Name="OpenDrinksView_BeginStoryboard" Storyboard="{StaticResource OpenDrinksView}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="SodaTab">
+            <BeginStoryboard x:Name="DisplaySodas_BeginStoryboard" Storyboard="{StaticResource DisplaySodas}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="ShakesTab">
+            <BeginStoryboard x:Name="DisplayShakes_BeginStoryboard" Storyboard="{StaticResource DisplayShakes}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="CoffeTab">
+            <BeginStoryboard x:Name="DisplayCof_BeginStoryboard" Storyboard="{StaticResource DisplayCof}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="MainDishesTab">
+            <BeginStoryboard x:Name="DisplayMainDishes_BeginStoryboard" Storyboard="{StaticResource DisplayMainDishes}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="AppetizersTab">
+            <BeginStoryboard x:Name="DisplayAppetizers_BeginStoryboard" Storyboard="{StaticResource DisplayAppetizers}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="DessertsTab">
+            <BeginStoryboard x:Name="DisplayDesserts_BeginStoryboard" Storyboard="{StaticResource DisplayDesserts}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="DetailedViewExitButton">
+            <BeginStoryboard x:Name="CloseDetailedView_BeginStoryboard" Storyboard="{StaticResource CloseDetailedView}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="AcknowledgeServerComing">
+            <BeginStoryboard x:Name="Acknowledge1_BeginStoryboard" Storyboard="{StaticResource Acknowledge1}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="CallServerButton">
+            <BeginStoryboard x:Name="CallServer_BeginStoryboard" Storyboard="{StaticResource CallServer}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="AcknowledgeOrderButton">
+            <BeginStoryboard x:Name="AcknowledgeOrder_BeginStoryboard" Storyboard="{StaticResource AcknowledgeOrder}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="OrderButton">
+            <BeginStoryboard x:Name="ConfirmOrder_BeginStoryboard" Storyboard="{StaticResource ConfirmOrder}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="CartButton_Copy">
+            <BeginStoryboard Storyboard="{StaticResource OpenOrder}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="PayButton">
+            <BeginStoryboard x:Name="BillOnWay_BeginStoryboard" Storyboard="{StaticResource BillOnWay}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="AcknowledgeOrderButton1_Copy">
+            <BeginStoryboard x:Name="GoToThankYou_BeginStoryboard" Storyboard="{StaticResource GoToThankYou}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="AcknowledgeOrderButton1">
+            <BeginStoryboard x:Name="GoReviewScreen_BeginStoryboard" Storyboard="{StaticResource GoReviewScreen}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="button">
+            <BeginStoryboard x:Name="GoToThankYou_BeginStoryboard1" Storyboard="{StaticResource GoToThankYou}"/>
+        </EventTrigger>
+    </Window.Triggers>
     <Canvas Name="ContentPanel">
-        <Canvas Name="WelcomeScreen" d:IsHidden="True">
-            <Image x:Name="WelcomeImage" Height="877.195" Canvas.Left="-470.509" Canvas.Top="-126.435" Width="2206.051" Source="burger.jpg" d:IsHidden="True"/>
-            <TextBlock x:Name="WelcomeText" Height="117.152" Canvas.Left="477.019" TextWrapping="Wrap" Text="Welcome!" Canvas.Top="116.931" Width="394.18" FontSize="72" FontFamily="Segoe UI Black" Foreground="White" d:IsHidden="True"/>
-            <TextBlock Height="33.078" Canvas.Left="549.958" TextWrapping="Wrap" Text="Tap anywhere to proceed." Canvas.Top="245.378" Width="215.007" Foreground="White" FontSize="18"/>
-
-        </Canvas>
         <Canvas x:Name="SelectionScreenDrinks" d:IsHidden="True">
-            <Rectangle x:Name="DrinksBackground" Fill="#FFC5C5C5" Height="645.334" RadiusY="5" RadiusX="5" Canvas.Top="46.5" Width="1273.333" d:IsHidden="True"/>
-            <Canvas x:Name="ContentSoda" d:IsHidden="True" Margin="0,0,1000,631.834"/>
-
-            <Canvas x:Name="ContentShakes" d:IsHidden="True" Margin="0,0,1000,631.834"/>
-
-            <Canvas x:Name="ContentCoffeeAndTea" d:IsHidden="True" Margin="0,0,1000,631.834"/>
+            <Rectangle x:Name="DrinksBackground" Fill="#FFC5C5C5" Height="645.334" RadiusY="5" RadiusX="5" Canvas.Top="46.5" Width="1273.333"/>
             <Button x:Name="SodaTab" Content="Soda" Height="40" Canvas.Left="7.667" Canvas.Top="8" Width="255" BorderBrush="{x:Null}" Background="#FFC5C5C5" FontSize="16"/>
             <Button x:Name="ShakesTab" Content="Shakes" Height="40" Canvas.Left="270.167" Canvas.Top="8" Width="255" BorderBrush="{x:Null}" Background="#FFC5C5C5" FontSize="16"/>
             <Button x:Name="CoffeTab" Content="Coffee and Tea" Height="40" Canvas.Left="530.167" Canvas.Top="8" Width="255" BorderBrush="{x:Null}" Background="#FFC5C5C5" FontSize="16"/>
             <ScrollViewer x:Name="DrinksScroller" Height="631.834" Width="1017.333" Canvas.Top="60" Canvas.Left="15" Background="#FFEDEDED">
-                <Grid x:Name="DrinksGrid"/>
+                <Canvas x:Name="DrinksGrid">
+                    <UniformGrid x:Name="ContentSoda" Margin="0,0,1000,631.834"/>
+
+                    <UniformGrid x:Name="ContentShakes" Margin="0,0,1000,631.834" Visibility="Hidden"/>
+
+                    <UniformGrid x:Name="ContentCoffeeAndTea" Margin="0,0,1000,631.834" Visibility="Hidden"/>
+                </Canvas>
             </ScrollViewer>
         </Canvas>
         <Canvas x:Name="SelectionScreenFood" d:IsHidden="True">
@@ -108,33 +205,346 @@
             <Button x:Name="AppetizersTab" Content="Appetizers" Height="40" Canvas.Left="270.167" Canvas.Top="8" Width="255" BorderBrush="{x:Null}" Background="#FFC5C5C5" FontSize="16"/>
             <Button x:Name="DessertsTab" Content="Desserts" Height="40" Canvas.Left="530.167" Canvas.Top="8" Width="255" BorderBrush="{x:Null}" Background="#FFC5C5C5" FontSize="16"/>
             <Rectangle x:Name="FoodBackground" Fill="#FFC5C5C5" Height="645.334" RadiusY="5" RadiusX="5" Canvas.Top="46.5" Width="1273.333"/>
-            <ScrollViewer Name="FoodScroller" Height="631.834" Width="1017.333" Canvas.Top="60" Canvas.Left="15" Background="#FFEDEDED"/>
-        </Canvas>
-        <Canvas x:Name="OrderScreen" d:IsHidden="True">
-            <Rectangle x:Name="OrderBackground" Fill="#FFD4D4D4" Height="690.667" Canvas.Left="744.667" Width="550" RadiusX="20" RadiusY="20"/>
-            <Rectangle x:Name="TotalBackground" Fill="#FFECECEC" Height="108" Canvas.Left="744" Canvas.Top="487" Width="529.333" RadiusY="16"/>
-            <ScrollViewer Name="OrderScroller" Height="451.499" Width="528.667" Canvas.Left="744.667" Canvas.Top="33.001" Background="#FFECECEC">
+            <ScrollViewer Name="FoodScroller" Height="631.834" Width="1017.333" Canvas.Top="60" Canvas.Left="15" Background="#FFEDEDED">
+                <Canvas Name="FoodGrid">
+                    <UniformGrid x:Name="ContentMainDishes" Margin="0,0,1000,631.834"/>
 
+                    <UniformGrid x:Name="ContentAppetizers" Margin="0,0,1000,631.834" Visibility="Hidden"/>
+
+                    <UniformGrid x:Name="ContentDesserts" Margin="0,0,1000,631.834" Visibility="Hidden"/>
+                </Canvas>
             </ScrollViewer>
-            <Button x:Name="OrderButton" Content="Button" Height="64.667" Canvas.Left="874.667" Style="{DynamicResource ButtonStyle4}" Canvas.Top="612" Width="285.333" FontSize="22"/>
-            <TextBlock x:Name="TotalLabel" Height="49.333" Canvas.Left="878.667" TextWrapping="Wrap" Text="TOTAL" Canvas.Top="524.667" Width="131.333" FontSize="22"/>
-            <TextBlock x:Name="OrderQuantityLabel" Height="38.666" Canvas.Left="778.667" TextWrapping="Wrap" Text="Quantity" Canvas.Top="44.667" Width="112.666" FontSize="18"/>
-            <TextBlock x:Name="OrderItemNameLabel" Height="38.666" Canvas.Left="958.667" TextWrapping="Wrap" Text="Item Name" Canvas.Top="44.667" Width="112.666" FontSize="18"/>
-            <TextBlock x:Name="OrderPriceLabel" Height="38.666" Canvas.Left="1138.667" TextWrapping="Wrap" Text="Price" Canvas.Top="44.667" Width="112.666" FontSize="18"/>
         </Canvas>
         <Canvas x:Name="ControlPanel" d:IsHidden="True">
-            <Button x:Name="CartButton" Content="CART" Height="156" Canvas.Left="1039.333" Canvas.Top="528.917" Width="230" FontSize="18" BorderBrush="{x:Null}"/>
+            <Canvas Name="holdButtons">
+                <Button x:Name="CartButton_Copy" Content="CART" Height="156" Canvas.Left="1039.333" Canvas.Top="528.917" Width="109.111" FontSize="18" BorderBrush="{x:Null}"/>
+                <Button x:Name="PayButton" Content="PAY" Height="156" Canvas.Left="1153.444" Canvas.Top="528.917" Width="109.111" FontSize="18" BorderBrush="{x:Null}"/>
+
+            </Canvas>
+            <Button x:Name="CartButton" Content="CART" Height="156" Canvas.Left="1039.333" Canvas.Top="528.917" Width="230" FontSize="18" BorderBrush="{x:Null}" d:IsHidden="True"/>
             <Button x:Name="CallServerButton" Content="CALL SERVER" Height="151.111" Canvas.Left="1039.333" Canvas.Top="372.806" Width="230" FontSize="18" BorderBrush="{x:Null}"/>
             <Button x:Name="FoodButton" Content="FOOD" Height="155.556" Canvas.Left="1039.333" Canvas.Top="212.25" Width="230" FontSize="18" BorderBrush="{x:Null}"/>
             <Button x:Name="DrinksButton" Content="DRINKS" Height="157.333" Canvas.Left="1039.333" Canvas.Top="49.917" Width="230" FontSize="18" BorderBrush="{x:Null}"/>
         </Canvas>
-        <Canvas x:Name="ItemDetailedView">
+        <Canvas x:Name="OrderScreen" Background="White" Visibility="Hidden" d:IsHidden="True">
+            <Rectangle x:Name="OrderTransparent" Fill="#FF797979" Height="694" RadiusY="2" RadiusX="2" Width="1294.667" Opacity="0.5"/>
+            <Rectangle x:Name="OrderBackground" Fill="#FFD4D4D4" Height="690.667" Canvas.Left="744.667" Width="550" RadiusX="20" RadiusY="20"/>
+            <Rectangle x:Name="TotalBackground" Fill="#FFECECEC" Height="108" Canvas.Left="744" Canvas.Top="487" Width="529.333" RadiusY="16"/>
+            <ScrollViewer x:Name="OrderScroller" Height="451.499" Width="528.667" Canvas.Left="744.667" Canvas.Top="33.001" Background="#FFECECEC"/>
+            <TextBlock x:Name="OrderQuantityLabel" Height="38.666" Canvas.Left="778.667" TextWrapping="Wrap" Canvas.Top="44.667" Width="112.666" FontSize="18"><Run Text="Quantity"/></TextBlock>
+            <TextBlock x:Name="OrderItemNameLabel" Height="38.666" Canvas.Left="958.667" TextWrapping="Wrap" Text="Item Name" Canvas.Top="44.667" Width="112.666" FontSize="18"/>
+            <TextBlock Height="26" TextWrapping="Wrap" Width="29" Canvas.Left="778.667" Canvas.Top="98.383"><Run Text="2"/><LineBreak/><Run/></TextBlock>
+            <TextBlock x:Name="OrderPriceLabel" Height="38.666" Canvas.Left="1138.667" TextWrapping="Wrap" Text="Price" Canvas.Top="44.667" Width="112.666" FontSize="18"/>
+            <Button x:Name="OrderButton" Content="Button" Height="64.667" Canvas.Left="874.667" Style="{DynamicResource ButtonStyle4}" Canvas.Top="612" Width="285.333" FontSize="22"/>
+            <TextBlock x:Name="TotalLabel" Height="49.333" Canvas.Left="878.667" TextWrapping="Wrap" Text="TOTAL" Canvas.Top="524.667" Width="131.333" FontSize="22"/>
+            <Button x:Name="OrderExitButton" Content="Button" Height="54" Canvas.Left="663.167" Style="{DynamicResource ButtonStyle5}" Canvas.Top="17.5" Width="54" Background="White" BorderBrush="{x:Null}"/>
+            <Rectangle Fill="White" Height="3.333" Canvas.Left="667.917" Canvas.Top="42.5" Width="44.5" RadiusX="2" RadiusY="2" RenderTransformOrigin="0.5,0.5">
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-45"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Rectangle Fill="White" Height="3.333" Canvas.Left="667.917" Canvas.Top="42.5" Width="44.5" RadiusX="2" RadiusY="2" RenderTransformOrigin="0.5,0.5">
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-135"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <TextBlock Height="26" TextWrapping="Wrap" Width="29" Canvas.Left="778.667" Canvas.Top="138.383" Text="1"/>
+            <TextBlock Height="26" TextWrapping="Wrap" Width="29" Canvas.Left="778.667" Canvas.Top="178.383" Text="3"/>
+            <TextBlock Height="26" TextWrapping="Wrap" Width="78.333" Canvas.Left="958.667" Canvas.Top="98.383" Text="Burger"/>
+            <TextBlock Height="26" TextWrapping="Wrap" Width="78.333" Canvas.Left="958.667" Canvas.Top="138.383" Text="Drink"/>
+            <TextBlock Height="26" TextWrapping="Wrap" Width="78.333" Canvas.Left="958.667" Canvas.Top="178.383" Text="Fries"/>
+            <TextBlock Height="26" TextWrapping="Wrap" Width="78.333" Canvas.Left="1118.667" Canvas.Top="98.383" Text="$8.00"/>
+            <TextBlock Height="26" TextWrapping="Wrap" Width="78.333" Canvas.Left="1118.667" Canvas.Top="138.383"><Run Text="$"/><Run Text="1"/><Run Text=".00"/></TextBlock>
+            <TextBlock Height="26" TextWrapping="Wrap" Width="78.333" Canvas.Left="1118.667" Canvas.Top="178.383"><Run Text="$"/><Run Text="6"/><Run Text=".00"/></TextBlock>
+            <TextBlock x:Name="TotalLabel_Copy" Height="49.333" Canvas.Left="1088.667" TextWrapping="Wrap" Text="$15.00" Canvas.Top="524.667" Width="131.333" FontSize="22"/>
+            <Button x:Name="OrderExitButton_Copy" Content="Button" Height="23.202" Canvas.Left="832.788" Style="{DynamicResource ButtonStyle5}" Canvas.Top="95.677" Width="23.202" Background="White" BorderBrush="{x:Null}" RenderTransformOrigin="0.5,0.5">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="45"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+            <Rectangle Fill="White" Height="1.432" Canvas.Left="834.695" Canvas.Top="106.363" Width="19.12" RadiusX="2" RadiusY="2" RenderTransformOrigin="0.5,0.5">
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform X="0.236" Y="0.098"/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Rectangle Fill="White" Height="1.432" Canvas.Left="834.695" Canvas.Top="106.363" Width="19.12" RadiusX="2" RadiusY="2" RenderTransformOrigin="0.5,0.5">
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-90"/>
+                        <TranslateTransform X="0.236" Y="0.098"/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Button x:Name="OrderExitButton_Copy1" Content="Button" Height="23.202" Canvas.Left="832.788" Style="{DynamicResource ButtonStyle5}" Canvas.Top="135.677" Width="23.202" Background="White" BorderBrush="{x:Null}" RenderTransformOrigin="0.5,0.5">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="45"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+            <Rectangle Fill="White" Height="1.432" Canvas.Left="834.695" Canvas.Top="146.363" Width="19.12" RadiusX="2" RadiusY="2" RenderTransformOrigin="0.5,0.5">
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform X="0.236" Y="0.098"/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Rectangle Fill="White" Height="1.432" Canvas.Left="834.695" Canvas.Top="146.363" Width="19.12" RadiusX="2" RadiusY="2" RenderTransformOrigin="0.5,0.5">
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-90"/>
+                        <TranslateTransform X="0.236" Y="0.098"/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Button x:Name="OrderExitButton_Copy2" Content="Button" Height="23.202" Canvas.Left="832.788" Style="{DynamicResource ButtonStyle5}" Canvas.Top="176.677" Width="23.202" Background="White" BorderBrush="{x:Null}" RenderTransformOrigin="0.5,0.5">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="45"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+            <Rectangle Fill="White" Height="1.432" Canvas.Left="834.695" Canvas.Top="187.363" Width="19.12" RadiusX="2" RadiusY="2" RenderTransformOrigin="0.5,0.5">
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform X="0.236" Y="0.098"/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Rectangle Fill="White" Height="1.432" Canvas.Left="834.695" Canvas.Top="187.363" Width="19.12" RadiusX="2" RadiusY="2" RenderTransformOrigin="0.5,0.5">
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-90"/>
+                        <TranslateTransform X="0.236" Y="0.098"/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Button x:Name="OrderExitButton_Copy3" Content="Button" Height="23.202" Canvas.Left="890.288" Style="{DynamicResource ButtonStyle5}" Canvas.Top="176.677" Width="23.202" Background="White" BorderBrush="{x:Null}" RenderTransformOrigin="0.5,0.5">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="45"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+            <Rectangle Fill="White" Height="1.432" Canvas.Left="892.195" Canvas.Top="187.363" Width="19.12" RadiusX="2" RadiusY="2" RenderTransformOrigin="0.5,0.5">
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform X="0.236" Y="0.098"/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Button x:Name="OrderExitButton_Copy4" Content="Button" Height="23.202" Canvas.Left="890.288" Style="{DynamicResource ButtonStyle5}" Canvas.Top="136.015" Width="23.202" Background="White" BorderBrush="{x:Null}" RenderTransformOrigin="0.5,0.5">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="45"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+            <Rectangle Fill="White" Height="1.432" Canvas.Left="892.195" Canvas.Top="146.701" Width="19.12" RadiusX="2" RadiusY="2" RenderTransformOrigin="0.5,0.5">
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform X="0.236" Y="0.098"/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Button x:Name="OrderExitButton_Copy5" Content="Button" Height="23.202" Canvas.Left="890.288" Style="{DynamicResource ButtonStyle5}" Canvas.Top="94.351" Width="23.202" Background="White" BorderBrush="{x:Null}" RenderTransformOrigin="0.5,0.5">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="45"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+            <Rectangle Fill="White" Height="1.432" Canvas.Left="892.195" Canvas.Top="105.037" Width="19.12" RadiusX="2" RadiusY="2" RenderTransformOrigin="0.5,0.5">
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform X="0.236" Y="0.098"/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+        </Canvas>
+        <Canvas x:Name="ItemDetailedView" Visibility="Hidden" d:IsHidden="True">
+            <Rectangle x:Name="DetailedViewTransparent" Fill="#FF797979" Height="694" RadiusY="2" RadiusX="2" Width="1273.333" Opacity="0.5"/>
             <Rectangle x:Name="DetailedViewBackground" Fill="#FFD1D1D1" Height="432" Canvas.Left="108.667" RadiusY="20" RadiusX="20" Canvas.Top="125" Width="924"/>
-            <Image Height="238" Canvas.Left="106.667" Canvas.Top="154" Width="918"/>
-            <ScrollViewer Name="DetailedViewScroller" Height="375" Width="924" Canvas.Left="108.667" Canvas.Top="154">
-                <TextBlock Height="66" TextWrapping="Wrap" Text="ItemName" Width="430" FontSize="48"/>
+            <ScrollViewer x:Name="DetailedViewScroller" Height="375" Width="924" Canvas.Left="108.667" Canvas.Top="154">
+                <Canvas>
+                    <Image Height="222.667" Width="905.333" Source="burger.jpg" Stretch="Fill" StretchDirection="UpOnly"/>
 
+                    <TextBlock Height="66" TextWrapping="Wrap" Text="ItemName" Width="251.334" FontSize="48" Foreground="White" Canvas.Left="305.333" Canvas.Top="137.333"/>
+                    <TextBlock Height="126" Canvas.Left="34" TextWrapping="Wrap" Canvas.Top="249" Width="473"><Run Text="Description of the  food Item. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur iaculis enim ut nulla bibendum, id posuere dolor porta. Maecenas quis turpis ornare, semper orci id, venenatis elit. Cras blandit lacus id viverra tempus. Ut aliquet risus eros, et dictum nunc bibendum a. Maecenas posuere quam velit, sed rutrum elit porttitor ac. "/><LineBreak/><Run Text="Pellentesque ullamcorper ante ut arcu porttitor ultricies. Nullam volutpat in diam eget egestas. Proin eu leo in sem sodales sagittis. Donec mollis nulla quis orci condimentum iaculis. Nullam ut malesuada justo. "/></TextBlock>
+                    <TextBlock Height="77.667" Canvas.Left="684" TextWrapping="Wrap" Text="#" Canvas.Top="287.333" Width="40" FontSize="36"/>
+                    <TextBlock Height="37" Canvas.Left="657.333" TextWrapping="Wrap" Text="$10.00" Canvas.Top="239.667" Width="184" FontSize="22"/>
+                </Canvas>
             </ScrollViewer>
+            <Button x:Name="DetailedViewExitButton" Content="Button" Height="54" Canvas.Left="1049.5" Style="{DynamicResource ButtonStyle5}" Canvas.Top="71.834" Width="54" Background="White" BorderBrush="{x:Null}"/>
+            <Rectangle Fill="White" Height="3.333" Canvas.Left="1054.25" Canvas.Top="96.834" Width="44.5" RadiusX="2" RadiusY="2" RenderTransformOrigin="0.5,0.5">
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-45"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Rectangle Fill="White" Height="3.333" Canvas.Left="1054.25" Canvas.Top="96.834" Width="44.5" RadiusX="2" RadiusY="2" RenderTransformOrigin="0.5,0.5">
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-135"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Button x:Name="DetailedViewExitButton_Copy" Content="Button" Height="54" Canvas.Left="702.824" Style="{DynamicResource ButtonStyle5}" Canvas.Top="438.517" Width="54" Background="White" BorderBrush="{x:Null}" RenderTransformOrigin="0.5,0.5">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="45"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+            <Rectangle Fill="White" Height="3.333" Canvas.Left="707.574" Canvas.Top="463.517" Width="44.5" RadiusX="2" RadiusY="2" RenderTransformOrigin="0.5,0.5">
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform X="0.236" Y="0.098"/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Rectangle Fill="White" Height="3.333" Canvas.Left="707.574" Canvas.Top="463.517" Width="44.5" RadiusX="2" RadiusY="2" RenderTransformOrigin="0.5,0.5">
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-90"/>
+                        <TranslateTransform X="0.236" Y="0.098"/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Button x:Name="DetailedViewExitButton_Copy1" Content="Button" Height="54" Canvas.Left="842.824" Style="{DynamicResource ButtonStyle5}" Canvas.Top="438.517" Width="54" Background="White" BorderBrush="{x:Null}" RenderTransformOrigin="0.5,0.5">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="45"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+            <Rectangle Fill="White" Height="3.333" Canvas.Left="847.574" Canvas.Top="463.517" Width="44.5" RadiusX="2" RadiusY="2" RenderTransformOrigin="0.5,0.5">
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform X="0.236" Y="0.098"/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+        </Canvas>
+        <Canvas x:Name="CallServerScreen" Visibility="Hidden" d:IsHidden="True">
+            <Rectangle x:Name="CallServerTransparent" Fill="#FF797979" Height="694" RadiusY="2" RadiusX="2" Width="1294.667" Opacity="0.8"/>
+            <TextBlock Height="84" Canvas.Left="241.667" TextWrapping="Wrap" Canvas.Top="226" Width="808" FontSize="48" FontFamily="Segoe UI Black"><Run Text="A server will be with you shortly"/><Run Text="!"/></TextBlock>
+            <Button x:Name="AcknowledgeServerComing" Content="OK" Height="72" Canvas.Left="547.667" Canvas.Top="364" Width="172" FontSize="36" FontFamily="Segoe UI Black"/>
+
+        </Canvas>
+        <Canvas x:Name="WelcomeScreen" d:IsHidden="True">
+            <Image x:Name="WelcomeImage" Height="877.195" Canvas.Left="-470.509" Canvas.Top="-126.435" Width="2206.051" Source="burger.jpg"/>
+            <TextBlock x:Name="WelcomeText" Height="117.152" Canvas.Left="477.019" TextWrapping="Wrap" Text="Welcome!" Canvas.Top="116.931" Width="394.18" FontSize="72" FontFamily="Segoe UI Black" Foreground="White"/>
+            <TextBlock Height="33.078" Canvas.Left="549.958" TextWrapping="Wrap" Text="Tap anywhere to proceed." Canvas.Top="245.378" Width="215.007" Foreground="White" FontSize="18"/>
+            <Button x:Name="DismissWelcome" Content="" Height="696.667" Canvas.Left="-4.333" Canvas.Top="-6" Width="1277.666" Opacity="0"/>
+
+        </Canvas>
+        <Canvas x:Name="OrderOTW" Visibility="Hidden" d:IsHidden="True">
+            <Rectangle x:Name="AcknowledgeOrderTransparent" Fill="#FF797979" Height="694" RadiusY="2" RadiusX="2" Width="1294.667" Opacity="0.8"/>
+            <TextBlock Height="84" Canvas.Left="271.667" TextWrapping="Wrap" Canvas.Top="226" Width="808" FontSize="48" FontFamily="Segoe UI Black" Text="Your order Is being prepared!"/>
+            <Button x:Name="AcknowledgeOrderButton" Content="OK" Height="72" Canvas.Left="547.667" Canvas.Top="364" Width="172" FontSize="36" FontFamily="Segoe UI Black"/>
+
+        </Canvas>
+        <Canvas x:Name="BillOTW" Visibility="Hidden">
+            <Rectangle x:Name="AcknowledgeOrderTransparent1" Fill="#FF797979" Height="694" RadiusY="2" RadiusX="2" Width="1294.667" Opacity="0.8"/>
+            <TextBlock Height="210" Canvas.Left="271.667" TextWrapping="Wrap" Canvas.Top="226" Width="808" FontSize="36" FontFamily="Segoe UI Black"><Run Text="Your Bill is On The Way, Would you "/><Run Text="l"/><Run Text="ike to review your items while you wait"/><Run Text="?"/></TextBlock>
+            <Button x:Name="AcknowledgeOrderButton1" Content="YES" Height="72" Canvas.Left="377.667" Canvas.Top="364" Width="172" FontSize="36" FontFamily="Segoe UI Black"/>
+            <Button x:Name="AcknowledgeOrderButton1_Copy" Content="No" Height="72" Canvas.Left="639.667" Canvas.Top="364" Width="172" FontSize="36" FontFamily="Segoe UI Black"/>
+
+        </Canvas>
+        <Canvas x:Name="ThankYou" d:IsHidden="True" Visibility="Hidden">
+            <Image x:Name="WelcomeImage1" Height="877.195" Canvas.Left="-470.509" Canvas.Top="-126.435" Width="2206.051" Source="burger.jpg"/>
+            <TextBlock x:Name="WelcomeText1" Height="313.152" Canvas.Left="388.019" TextWrapping="Wrap" Canvas.Top="33.931" Width="785.18" FontSize="72" FontFamily="Segoe UI Black" Foreground="White"><Run Text="Thank You "/><Run Text="for"/><LineBreak/><Run Text=" dining w"/><Run Text="i"/><Run Text="t"/><Run Text="h"/><Run Text=" us"/><Run Text="!"/></TextBlock>
+
+        </Canvas>
+        <Canvas Name="ReviewScreen" Visibility="Hidden">
+            <Rectangle Fill="#FFC1C1C1" Height="264" Canvas.Left="107.667" Canvas.Top="116" Width="460" RadiusX="10" RadiusY="10"/>
+            <Image Height="165.334" Canvas.Left="107.667" Canvas.Top="129.333" Width="460" Source="burger.jpg" Stretch="Fill" StretchDirection="UpOnly"/>
+            <TextBlock Height="31" Canvas.Left="274" TextWrapping="Wrap" Text="Hamburger" Canvas.Top="299.667" Width="117.333" FontSize="20"/>
+            <Rectangle Fill="#FFC1C1C1" Height="264" Canvas.Left="681.667" Canvas.Top="116" Width="460" RadiusX="10" RadiusY="10"/>
+            <Image Height="165.334" Canvas.Left="681.667" Canvas.Top="129.333" Width="460" Source="burger.jpg" Stretch="Fill" StretchDirection="UpOnly"/>
+            <TextBlock Height="31" Canvas.Left="848" TextWrapping="Wrap" Text="Hamburger" Canvas.Top="299.667" Width="117.333" FontSize="20"/>
+            <Button x:Name="button" Content="Done" Height="101.333" Canvas.Left="428.667" Canvas.Top="514" Width="349.333" FontSize="24" FontFamily="Segoe UI Black" Background="#FFCDCDCD" BorderBrush="{x:Null}"/>
+            <Image Height="49.334" Canvas.Left="156.667" Canvas.Top="321.333" Width="326.666" Source="5star.png"/>
+            <Image Height="49.334" Canvas.Left="738.667" Canvas.Top="321.333" Width="326.666" Source="5star.png"/>
+
         </Canvas>
 
     </Canvas>

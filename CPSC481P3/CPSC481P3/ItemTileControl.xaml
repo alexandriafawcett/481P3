@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:CPSC481P3"
-             mc:Ignorable="d" Height="221" Width="191.177">
+             mc:Ignorable="d" Height="221" Width="191.177" Margin="45,30">
     <UserControl.Resources>
         <Style x:Key="ButtonStyle3" TargetType="{x:Type Button}">
             <Setter Property="Template">
@@ -26,9 +26,9 @@
         </Style>
     </UserControl.Resources>
     <Grid>
-        <Rectangle x:Name="ItemTileBackground" Fill="#FFC1C1C1" RadiusY="5" RadiusX="5"/>
-        <Image x:Name="ItemTileImage" Margin="0,13,0,69"/>
-        <TextBlock x:Name="ItemTileName" TextWrapping="Wrap" Margin="17.833,152,16.834,51.833"><Run Text="Item Name"/></TextBlock>
+        <Rectangle x:Name="ItemTileBackground" Fill="#FFC1C1C1" RadiusY="5" RadiusX="5" Margin="0"/>
+        <Image x:Name="ItemTileImage" Margin="0,13,0,69" Source="burger.jpg"/>
+        <TextBlock x:Name="ItemTileName" TextWrapping="Wrap" Margin="68.598,152,56.094,51.833"><Run Text="Item Name"/></TextBlock>
         <Button x:Name="MinusItemTileButton" Content="" Style="{DynamicResource ButtonStyle3}" Background="#FF9B9B9B" Margin="117.404,171.446,29.38,4.998" RenderTransformOrigin="0.5,0.5">
             <Button.RenderTransform>
                 <TransformGroup>
@@ -79,6 +79,11 @@
                 </TransformGroup>
             </Rectangle.RenderTransform>
         </Rectangle>
+        <TextBlock HorizontalAlignment="Left" Height="34.18" Margin="152.986,110.453,0,0" TextWrapping="Wrap" Text="$5" VerticalAlignment="Top" Width="34.129" FontSize="24" FontFamily="Segoe UI Black" Foreground="White" RenderTransformOrigin="0.521,0.361">
+            <TextBlock.Effect>
+                <DropShadowEffect/>
+            </TextBlock.Effect>
+        </TextBlock>
 
     </Grid>
 </UserControl>
